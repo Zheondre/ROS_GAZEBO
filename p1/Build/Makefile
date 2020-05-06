@@ -123,6 +123,33 @@ hello/fast:
 	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
 .PHONY : hello/fast
 
+Scripts/hello.o: Scripts/hello.cpp.o
+
+.PHONY : Scripts/hello.o
+
+# target to build an object file
+Scripts/hello.cpp.o:
+	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/Scripts/hello.cpp.o
+.PHONY : Scripts/hello.cpp.o
+
+Scripts/hello.i: Scripts/hello.cpp.i
+
+.PHONY : Scripts/hello.i
+
+# target to preprocess a source file
+Scripts/hello.cpp.i:
+	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/Scripts/hello.cpp.i
+.PHONY : Scripts/hello.cpp.i
+
+Scripts/hello.s: Scripts/hello.cpp.s
+
+.PHONY : Scripts/hello.s
+
+# target to generate assembly for a file
+Scripts/hello.cpp.s:
+	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/Scripts/hello.cpp.s
+.PHONY : Scripts/hello.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -132,6 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... hello"
 	@echo "... rebuild_cache"
+	@echo "... Scripts/hello.o"
+	@echo "... Scripts/hello.i"
+	@echo "... Scripts/hello.s"
 .PHONY : help
 
 
