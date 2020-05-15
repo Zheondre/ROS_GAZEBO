@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/workspace/Ros_Gazebo/l3/catkin_ws/install/setup.sh
