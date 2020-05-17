@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
-
+  <xacro:include filename="$(find my_robot)/urdf/my_robot.gazebo" />
   <link name="robot_footprint"></link>
 
   <joint name="robot_footprint_joint" type="fixed">
@@ -125,13 +125,6 @@
 
   </link>
 
- <joint name="camera_joint" type="fixed">
-    <axis xyz="0 1 0" />
-    <origin xyz="0.2 0 0" rpy="0 0 0"/>
-    <parent link="chassis"/>
-    <child link="camera"/>
-  </joint>
-
   <link name="camera">
     <collision>
       <origin xyz="0.2 0 0" rpy="0 0 0"/>
@@ -156,13 +149,6 @@
     </inertial>
   </link>
 
- <joint name="hokuyo_joint" type="fixed">
-    <axis xyz="0 1 0" />
-    <origin xyz="0.15 0 0.08" rpy="0 0 0"/>
-    <parent link="chassis"/>
-    <child link="hokuyo"/>
-  </joint>
-
   <link name="hokuyo">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -185,6 +171,21 @@
     </inertial>
   </link>
 
+ <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.2 0 0" rpy="0 0 0"/>
+    <parent link="chassis"/>
+    <child link="camera"/>
+  </joint>
+
+
+ <joint name="hokuyo_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.15 0 0.08" rpy="0 0 0"/>
+    <parent link="chassis"/>
+    <child link="hokuyo"/>
+  </joint>
+
   <joint type="continuous" name="L_wheel_hinge">
    <origin xyz="0 0.15 0" rpy="0 0 0"/>
    <child link="L_wheel"/>
@@ -195,10 +196,10 @@
   </joint>
 
   <joint type="continuous" name="R_wheel_hinge">
-   <origin xyz="0 -0.07 0" rpy="0 0 0"/>
+   <origin xyz="0 -0.1 0" rpy="0 0 0"/>
    <child link="R_wheel"/>
    <parent link="chassis"/>
-   <axis xyz="0 -0.07 0" rpy="0 0 0"/>
+   <axis xyz="0 -0.5 0" rpy="0 0 0"/>
    <limit effort="10000" velocity="1000"/>
    <dynamics damping="1.0" friction="1.0"/>
   </joint>
