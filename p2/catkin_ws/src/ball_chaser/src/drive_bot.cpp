@@ -40,7 +40,7 @@ int main(int argc, char** argv)
 	DriveTarget tar(n);
 
     // TODO: Define a drive /ball_chaser/command_robot service with a handle_drive_request callback function
-    ros::ServiceServer service = n.advertiseService("/ball_chaser/command_robot", &tar.handle_drive_request_cb);
+    ros::ServiceServer service = n.advertiseService("/ball_chaser/command_robot", &DriveTarget::handle_drive_request_cb, &tar);
     ROS_INFO("Ready to send joint commands");
 
 

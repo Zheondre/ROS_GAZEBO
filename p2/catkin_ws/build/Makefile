@@ -296,6 +296,19 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
+# Target rules for targets named drive_bot
+
+# Build rule for target.
+drive_bot: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 drive_bot
+.PHONY : drive_bot
+
+# fast build rule for target.
+drive_bot/fast:
+	$(MAKE) -f ball_chaser/CMakeFiles/drive_bot.dir/build.make ball_chaser/CMakeFiles/drive_bot.dir/build
+.PHONY : drive_bot/fast
+
+#=============================================================================
 # Target rules for targets named ball_chaser_gennodejs
 
 # Build rule for target.
@@ -682,6 +695,7 @@ help:
 	@echo "... gtest_main"
 	@echo "... gtest"
 	@echo "... _catkin_empty_exported_target"
+	@echo "... drive_bot"
 	@echo "... ball_chaser_gennodejs"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... ball_chaser_genpy"
