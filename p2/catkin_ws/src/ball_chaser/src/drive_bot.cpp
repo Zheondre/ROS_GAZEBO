@@ -11,7 +11,7 @@ bool DriveTarget::handle_drive_request_cb(ball_chaser::DriveToTarget::Request& r
 	ball_chaser::DriveToTarget::Response& res){
 
  
-   ROS_INFO("DriveTarget received - j1:%1.2f, a1:%1.2f", (float)req.linear_x, (float)req.angular_z);
+   ROS_INFO("DriveTarget received j1: %1.2f, a1: %1.2f", (float)req.linear_x, (float)req.angular_z);
 
 
         geometry_msgs::Twist motor_command;
@@ -22,7 +22,7 @@ bool DriveTarget::handle_drive_request_cb(ball_chaser::DriveToTarget::Request& r
 	motor_command_publisher.publish(motor_command);
 
 
-  res.msg_feedback = "Joint vel set - j1: " + std::to_string(req.linear_x) + "angle, a1; " + std::to_string(req.angular_z);
+  //res.msg_feedback = "Joint vel set j1: " + std::to_string(req.linear_x) + "angle, a1; " + std::to_string(req.angular_z);
     ROS_INFO_STREAM(res.msg_feedback);
 
 ros::Duration(1).sleep();
@@ -41,7 +41,7 @@ int main(int argc, char** argv)
 
     // TODO: Define a drive /ball_chaser/command_robot service with a handle_drive_request callback function
     ros::ServiceServer service = n.advertiseService("/ball_chaser/command_robot", &DriveTarget::handle_drive_request_cb, &tar);
-    ROS_INFO("Ready to send joint commands");
+    ROS_INFO("Ready to drive robot");
 
 
     // TODO: Handle ROS communication events
