@@ -29,8 +29,8 @@ void process_image::drive_robot(float lin_x, float ang_z)
 	    ros::Duration(1).sleep();	
 	else 
     	   ros::Duration(2).sleep(); */
-	srv.request.linear_x = 0; 
-	srv.request.angular_z = 0;
+	//srv.request.linear_x = 0; 
+	//srv.request.angular_z = 0;
 
 
 	if (!client.call(srv))
@@ -85,7 +85,7 @@ void process_image::process_image_callback(const sensor_msgs::Image img)
 	case LEFT: 
    ROS_INFO("LEFT");
 //drive_robot(0,0);
-	drive_robot(0.3,0.1); 
+	drive_robot(0.5,0.1); 
 	break; 
 	case MIDDLE:
    ROS_INFO("MIDDLE");
@@ -95,7 +95,7 @@ void process_image::process_image_callback(const sensor_msgs::Image img)
 	case RIGHT:
    ROS_INFO("RIGHT");
 //drive_robot(0,0);
-	drive_robot(0.3,-0.1); 
+	drive_robot(0.5,-0.1); 
 	break ; 
 	default: 
 	drive_robot(0,0); 
