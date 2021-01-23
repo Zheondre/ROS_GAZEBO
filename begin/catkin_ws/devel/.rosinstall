@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/z/src/robo/begin/catkin_ws/devel/setup.sh

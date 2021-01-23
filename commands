@@ -1,0 +1,37 @@
+////******************************/////////////
+
+catkin_make
+source devel/setup.bash
+ex1:
+roslaunch my_robot world.launch
+
+
+***
+ex2: Make sure to run commands in catkin_ws of desired project
+In one terminal enter 
+rosrun
+
+In another terminal enter  
+rosrun gazebo_ros gazebo
+
+Open another terminal enter 
+roslaunch m2w_desc spawn.launch
+***
+
+ex3////////////
+in terminal 1
+roslaunch my_worlds world.launch
+
+in terminal 2 
+roslaunch m2w_desc spawn.launch
+
+terminal 3 
+rosrun motion_plan reading_laser
+
+end ex3///////////////
+
+If project is copied, delete build and devel 
+run catkin_make in the catkin_ws
+
+ 
+//////////////////////////////////////////////

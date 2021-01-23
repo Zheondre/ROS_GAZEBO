@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/z/src/robo/p4/catkin_ws/devel/setup.sh

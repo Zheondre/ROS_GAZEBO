@@ -1,0 +1,8 @@
+prefix=/home/z/src/robo/b1/catkin_ws/devel
+
+Name: m2w_desc
+Description: Description of m2w_desc
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

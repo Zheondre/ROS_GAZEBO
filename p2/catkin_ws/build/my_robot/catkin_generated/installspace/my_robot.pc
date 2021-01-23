@@ -1,4 +1,4 @@
-prefix=/home/workspace/Ros_Gazebo/p2/catkin_ws/install
+prefix=/home/z/src/robo/p2/catkin_ws/install
 
 Name: my_robot
 Description: Description of my_robot

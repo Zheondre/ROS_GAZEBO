@@ -1,0 +1,2 @@
+m2w_desc:motion_plan:my_worlds:teleop_twist_keyboard
+-DCATKIN_DEVEL_PREFIX=/home/z/src/robo/b1/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/z/src/robo/b1/catkin_ws/install -G Unix Makefiles
